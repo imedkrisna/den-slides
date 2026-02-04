@@ -16,13 +16,27 @@ Welcome to your presentation! This template includes:
 - Brown accent line before headings
 - Styled page numbers
 
-## Key Points
+## Key Points {.small}
 
 Here are some bullet points:
 
 - First important point
 - Second important point
 - Third important point
+- Fourth point to show smaller text
+- Fifth point for comparison
+
+## Dense Content {.smaller}
+
+This slide uses the smaller class for very dense content:
+
+- Item one with details
+- Item two with more info
+- Item three explanation
+- Item four description
+- Item five notes
+- Item six summary
+- Item seven conclusion
 
 ## Data Example
 
