@@ -1,32 +1,24 @@
-# DEN Slides
+## Tentang repo ini
 
-A Quarto template extension for creating DEN-branded presentations in both HTML (Reveal.js) and PDF (Beamer) formats.
+Ini adalah repo untuk panduan presentasi dengan branding Dewan Ekonomi Nasional (DEN). Outputnya dapat berupa HTML (dengan Reveal.js) dan PDF (dengan Beamer)
 
-## Features
-
-- **Branded title slide** with background image
-- **Logo** in top-right corner (hidden on title and ending slides)
-- **Brown accent line** before slide headings
-- **Styled page numbers** in brown box (bottom-right)
-- **Adaptive title sizing** for long titles (auto-adjusts font size)
-- **Ending slide** with full-page branded background
-- Consistent styling across HTML and PDF outputs
-
-## Installation
+## Instalasi
 
 ### From GitHub
 
+buka terminal favorit anda, navigasikan ke folder kerja anda, lalu ketik
+
 ```bash
-quarto add imedk/den-slides
+quarto use template imedkrisna/den-slides
 ```
 
 ### Local Installation
 
-Clone this repository and copy the `_extensions` folder to your project.
+Clone repo ini dan kopi folder `_extensions` ke project anda.
 
-## Usage
+## Penggunaan
 
-Create a new `.qmd` file with the following YAML header:
+Buat `.qmd` dengan YAML:
 
 ```yaml
 ---
@@ -61,7 +53,7 @@ Your content here.
 :::
 ```
 
-> **Note:** The ending slide requires both the `## {.ending-slide ...}` header (for HTML) and the `::: {.ending-slide} :::` div (for PDF) to work correctly in both formats.
+> **Note:** ending slide wajib ada header `## {.ending-slide ...}` untuk html dan `::: {.ending-slide} :::` div (for PDF). Header terakhir sebaiknya tidak diubah, dan jangan ada konten lagi setelah header terakhir (ending-slide)
 
 ### Rendering
 
@@ -76,46 +68,6 @@ quarto render presentation.qmd --to den-beamer
 quarto render presentation.qmd
 ```
 
-## Customization
-
-### Brand Colors
-
-Edit `_extensions/den/revealjs.scss` to change colors:
-
-```scss
-$den-brown: #6A4A3C;  /* Primary accent color */
-$den-dark:  #2B2B2B;  /* Text color */
-$den-gray:  #F2F2F2;  /* Background accent */
-$den-white: #FFFFFF;  /* White */
-```
-
-### Images
-
-Replace the following images in `_extensions/den/`:
-
-- `title.png` - Title slide background
-- `end.png` - Ending slide background  
-- `logo.png` - Logo displayed on content slides
-
-## File Structure
-
-```
-den-slides/
-├── _extensions/
-│   └── den/
-│       ├── _extension.yaml    # Extension configuration
-│       ├── revealjs.scss      # HTML/Reveal.js styles
-│       ├── beamer-header.tex  # PDF/Beamer LaTeX header
-│       ├── ending-slide.lua   # Lua filter for ending slides
-│       ├── title-detect.html  # JS for adaptive title sizing
-│       ├── title.png          # Title slide background
-│       ├── end.png            # Ending slide background
-│       └── logo.png           # Logo image
-├── template.qmd               # Example template
-├── README.md
-└── LICENSE
-```
-
 ## Requirements
 
 - [Quarto](https://quarto.org/) >= 1.4
@@ -124,3 +76,7 @@ den-slides/
 ## License
 
 MIT License
+
+## Atribusi
+
+Pembuatan template ini dibantu oleh Claude Opus 4.5
