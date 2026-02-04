@@ -16,6 +16,7 @@ contributes:
       include-after-body: title-detect.html
       filters:
         - ending-slide.lua
+        - small-slide.lua
       format-resources:
         - end.png
     beamer:
@@ -25,6 +26,7 @@ contributes:
       include-in-header: beamer-header.tex
       filters:
         - ending-slide.lua
+        - small-slide.lua
       format-resources:
         - title.png
         - end.png

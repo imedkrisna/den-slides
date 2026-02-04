@@ -214,3 +214,39 @@ body:has(.ending-slide.present) .slide-logo {
   border-bottom: 1px solid $den-gray;
   padding: 8px 15px;
 }
+
+/* === Slide Size Classes for Heavy Content === */
+/* Use {.small} or {.smaller} on slide headers to reduce font size */
+.reveal .slides section.small {
+  font-size: 0.85em;
+  
+  h2 {
+    font-size: 1.1em;
+  }
+  
+  li {
+    margin-bottom: 0.3em;
+    line-height: 1.3;
+  }
+  
+  pre {
+    font-size: 0.9em;
+  }
+}
+
+.reveal .slides section.smaller {
+  font-size: 0.7em;
+  
+  h2 {
+    font-size: 1.0em;
+  }
+  
+  li {
+    margin-bottom: 0.25em;
+    line-height: 1.2;
+  }
+  
+  pre {
+    font-size: 0.85em;
+  }
+}
