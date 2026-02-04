@@ -32,22 +32,44 @@
 \setbeamercolor{itemize item}{fg=denbrown}
 \setbeamercolor{enumerate item}{fg=denbrown}
 
-% === Title Page Template ===
+% === Adaptive Title Sizing ===
+\usepackage{ifthen}
+\newlength{\titlewidth}
+\newlength{\titlemaxwidth}
+
+% === Title Page Template with Adaptive Sizing ===
 \setbeamertemplate{title page}{
   \begin{tikzpicture}[remember picture, overlay]
     \node[anchor=center] at (current page.center) {
       \includegraphics[width=\paperwidth, height=\paperheight]{title.png}
     };
   \end{tikzpicture}
-  \vspace{3cm}
-  \begin{center}
-    \begin{minipage}{0.85\textwidth}
-      \centering
-      {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
-      \vspace{0.3cm}
-      {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
-    \end{minipage}
-  \end{center}
+  % Calculate title width to determine if it's long
+  \setlength{\titlemaxwidth}{0.80\paperwidth}
+  \settowidth{\titlewidth}{\usebeamerfont{title}\inserttitle}
+  %
+  \ifthenelse{\lengthtest{\titlewidth > \titlemaxwidth}}%
+  {% Long title (3+ lines): 25% smaller font, higher position
+    \vspace{1.8cm}
+    \begin{center}
+      \begin{minipage}{0.85\textwidth}
+        \centering
+        {\fontsize{18}{22}\selectfont\bfseries\color{white}\inserttitle\par}
+        \vspace{0.3cm}
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+      \end{minipage}
+    \end{center}
+  }{% Short title (1 line): normal font, normal position
+    \vspace{3cm}
+    \begin{center}
+      \begin{minipage}{0.85\textwidth}
+        \centering
+        {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+        \vspace{0.3cm}
+        {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+      \end{minipage}
+    \end{center}
+  }
   \vfill
   \begin{center}
     {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate}
@@ -112,3 +134,16 @@
     \end{tikzpicture}
   \end{frame}
 }
+
+% === Support for ending-slide class via background-image attribute ===
+\makeatletter
+\define@key{beamerframe}{background-image}{%
+  \setbeamertemplate{background}{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=center] at (current page.center) {
+        \includegraphics[width=\paperwidth, height=\paperheight]{#1}
+      };
+    \end{tikzpicture}
+  }%
+}
+\makeatother

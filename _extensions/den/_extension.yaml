@@ -13,6 +13,9 @@ contributes:
         data-background-image: title.png
         data-background-size: cover
       css: revealjs.scss
+      include-after-body: title-detect.html
+      filters:
+        - ending-slide.lua
       format-resources:
         - end.png
     beamer:
@@ -20,6 +23,8 @@ contributes:
       theme: default
       colortheme: default
       include-in-header: beamer-header.tex
+      filters:
+        - ending-slide.lua
       format-resources:
         - title.png
         - end.png

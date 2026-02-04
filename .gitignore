@@ -1,2 +1,23 @@
+# Generated output files
+*.html
+*.pdf
+*.tex
+*_files/
+
+# Editor/IDE
+/.luarc.json
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Quarto cache
+.quarto/
+_freeze/
+
+# Other
 *.agdai
 MAlonzo/**

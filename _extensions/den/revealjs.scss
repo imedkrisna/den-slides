@@ -43,6 +43,26 @@ $presentation-font-size-root: 40px;
     right: 0;
     text-align: center;
     margin: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+    transition: font-size 0.2s ease, bottom 0.2s ease;
+  }
+  
+  /* 2-line title: smaller font, move up */
+  &.title-2-lines h1.title {
+    font-size: 1.3em;
+    bottom: -270px;
+  }
+  
+  /* 3+ line title: 25% smaller than original, move up more */
+  &.title-3-lines h1.title {
+    font-size: 1.2em;
+    bottom: -220px;
+  }
+  
+  /* Hide logo on title slide */
+  .slide-logo {
+    display: none !important;
   }
   
   .author {
@@ -70,11 +90,6 @@ $presentation-font-size-root: 40px;
   }
 }
 
-/* Hide logo on title slide */
-#title-slide .slide-logo {
-  display: none !important;
-}
-
 /* === Content Slides === */
 .reveal .slides section {
   text-align: left;
@@ -97,12 +112,13 @@ $presentation-font-size-root: 40px;
   flex-shrink: 0;
 }
 
-/* === Logo at top-right === */
+/* === Logo at top-right (viewport-relative for consistent sizing) === */
 .reveal .slide-logo {
-  position: absolute !important;
-  top: 10px !important;
-  right: 12px !important;
-  max-height: 138px !important;
+  position: fixed !important;
+  top: 1.5vh !important;
+  right: 1.5vw !important;
+  height: 10.5vh !important;
+  max-height: none !important;
   width: auto !important;
   z-index: 1000;
 }
@@ -131,10 +147,8 @@ $presentation-font-size-root: 40px;
 }
 
 /* === Ending Slide === */
+/* Background is set via data-background-image attribute in Quarto for full coverage */
 .reveal .slides section.ending-slide {
-  background-image: url("end.png");
-  background-size: cover;
-  background-position: center;
   display: flex !important;
   flex-direction: column;
   justify-content: center;
@@ -200,3 +214,9 @@ body:has(.ending-slide.present) .slide-logo {
   border-bottom: 1px solid $den-gray;
   padding: 8px 15px;
 }
+
+/* === JavaScript for Title Line Detection === */
+/*
+  The following script is injected via Quarto's include-after-body.
+  It detects title length and adds appropriate classes.
+*/

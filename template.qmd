@@ -32,4 +32,7 @@ Here are some bullet points:
 | Item B   | 200   | -5%    |
 | Item C   | 150   | +3%    |
 
-## {.ending-slide}
+## {.ending-slide background-image="end.png" background-size="cover"}
+
+::: {.ending-slide}
+:::
