@@ -214,9 +214,3 @@ body:has(.ending-slide.present) .slide-logo {
   border-bottom: 1px solid $den-gray;
   padding: 8px 15px;
 }
-
-/* === JavaScript for Title Line Detection === */
-/*
-  The following script is injected via Quarto's include-after-body.
-  It detects title length and adds appropriate classes.
-*/
