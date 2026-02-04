@@ -13,6 +13,10 @@ contributes:
         data-background-image: title.png
         data-background-size: cover
       css: revealjs.scss
+      format-resources:
+        - end.png
+      filters:
+        - ending-slide.lua
     beamer:
       aspectratio: 169
       theme: default
@@ -22,3 +26,5 @@ contributes:
         - title.png
         - end.png
         - logo.png
+      filters:
+        - ending-slide.lua
