@@ -47,6 +47,10 @@ Your content here.
 |----------|----------|
 | Data A   | Data B   |
 
+## Heavy content {.small}
+
+use class {.small} or {.smaller} for a slide with a heavily worded content.
+
 ## {.ending-slide background-image="end.png" background-size="cover"}
 
 ::: {.ending-slide}
