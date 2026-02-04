@@ -73,10 +73,6 @@ quarto render presentation.qmd
 - [Quarto](https://quarto.org/) >= 1.4
 - For PDF output: LaTeX distribution (e.g., TinyTeX, TeX Live)
 
-## License
-
-MIT License
-
 ## Atribusi
 
 Pembuatan template ini dibantu oleh Claude Opus 4.5
