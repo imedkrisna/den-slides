@@ -12,7 +12,7 @@ $body-color: $den-dark;
 $link-color: $den-brown;
 $presentation-heading-color: $den-dark;
 $presentation-heading-font: "Helvetica Neue", "Arial", sans-serif;
-$presentation-font-size-root: 40px;
+$presentation-font-size-root: 30px;
 
 /*-- scss:rules --*/
 
@@ -24,7 +24,7 @@ $presentation-font-size-root: 40px;
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: $den-dark;
 }
 
