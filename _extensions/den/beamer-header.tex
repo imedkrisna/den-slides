@@ -77,15 +77,33 @@
   \vspace{0.5cm}
 }
 
-% === Frame Title Template with Vertical Brown Line ===
+% === Adaptive Frame Title Sizing ===
+\newlength{\frametitlewidth}
+\newlength{\frametitlemaxwidth}
+
+% === Frame Title Template with Vertical Brown Line and Adaptive Sizing ===
 \setbeamertemplate{frametitle}{
   \vspace{0.4cm}
+  % Calculate frametitle width to determine if it's long
+  \setlength{\frametitlemaxwidth}{0.75\paperwidth}
+  \settowidth{\frametitlewidth}{\usebeamerfont{frametitle}\insertframetitle}
+  %
   \begin{beamercolorbox}[wd=\paperwidth, leftskip=0.5cm]{frametitle}
     \tikz[baseline=-0.3ex]{
       \fill[denbrown] (0, -0.35) rectangle (0.15, 0.55);
     }
     \hspace{0.3cm}
-    \usebeamerfont{frametitle}\insertframetitle
+    \ifthenelse{\lengthtest{\frametitlewidth > 1.3\frametitlemaxwidth}}%
+    {% Very long title: use small font
+      {\small\bfseries\insertframetitle}%
+    }{%
+      \ifthenelse{\lengthtest{\frametitlewidth > \frametitlemaxwidth}}%
+      {% Long title: use normalsize font
+        {\normalsize\bfseries\insertframetitle}%
+      }{% Normal title: use standard frametitle font
+        \usebeamerfont{frametitle}\insertframetitle%
+      }%
+    }%
   \end{beamercolorbox}
 }
 

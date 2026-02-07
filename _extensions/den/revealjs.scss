@@ -100,6 +100,7 @@ $presentation-font-size-root: 30px;
   display: flex;
   align-items: center;
   margin-top: 20px;
+  transition: font-size 0.2s ease;
 }
 
 .reveal .slides section:not(#title-slide) h2::before {
@@ -110,6 +111,15 @@ $presentation-font-size-root: 30px;
   background: $den-brown;
   margin-right: 15px;
   flex-shrink: 0;
+}
+
+/* === Auto-shrink long headings === */
+.reveal .slides section:not(#title-slide) h2.heading-long {
+  font-size: 0.85em;
+}
+
+.reveal .slides section:not(#title-slide) h2.heading-very-long {
+  font-size: 0.75em;
 }
 
 /* === Logo at top-right (viewport-relative for consistent sizing) === */

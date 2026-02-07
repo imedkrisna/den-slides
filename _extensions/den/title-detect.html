@@ -53,6 +53,25 @@ function updateLogoVisibility() {
   }
 }
 
+// Detect long headings and apply smaller font classes
+function checkHeadingLength() {
+  document.querySelectorAll('.slides section:not(#title-slide) h2').forEach(function(h2) {
+    const text = h2.textContent || '';
+    const charCount = text.length;
+    
+    // Remove existing heading length classes
+    h2.classList.remove('heading-long', 'heading-very-long');
+    
+    // Apply classes based on character count
+    // ~50 chars typically fit on one line at standard h2 size
+    if (charCount > 70) {
+      h2.classList.add('heading-very-long');
+    } else if (charCount > 50) {
+      h2.classList.add('heading-long');
+    }
+  });
+}
+
 // Also run on Reveal.js ready event
 if (typeof Reveal !== 'undefined') {
   Reveal.on('ready', function() {
@@ -70,6 +89,9 @@ if (typeof Reveal !== 'undefined') {
         }
       }
     }
+    
+    // Check heading lengths
+    checkHeadingLength();
     
     // Initial logo visibility check
     updateLogoVisibility();
