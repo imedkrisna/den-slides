@@ -93,6 +93,12 @@ $presentation-font-size-root: 30px;
   }
 }
 
+/* Hide page number on title slide */
+#title-slide~.slide-number,
+body:has(#title-slide.present) .slide-number {
+  display: none !important;
+}
+
 /* === Content Slides === */
 .reveal .slides section {
   text-align: left;
@@ -158,6 +164,40 @@ $presentation-font-size-root: 30px;
   font-size: 0.7em;
   font-weight: 500;
   font-style: italic;
+}
+
+/* === Block containers (callout boxes) === */
+.reveal .slides section .block {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: rgba($den-gray, 0.5);
+  border-left: 4px solid $den-brown;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  box-sizing: border-box;
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: $den-brown;
+  }
+
+  p {
+    margin: 0.5em 0;
+  }
+
+  .math {
+    display: block;
+    margin: 0.5em 0;
+  }
 }
 
 /* === Logo at top-right (viewport-relative for consistent sizing) === */
