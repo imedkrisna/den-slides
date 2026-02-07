@@ -2,8 +2,8 @@
 
 /* === DEN Brand Colors === */
 $den-brown: #6A4A3C;
-$den-dark:  #2B2B2B;
-$den-gray:  #F2F2F2;
+$den-dark: #2B2B2B;
+$den-gray: #F2F2F2;
 $den-white: #FFFFFF;
 
 /* === Reveal.js Variable Overrides === */
@@ -22,7 +22,10 @@ $presentation-font-size-root: 30px;
   color: $den-dark;
 }
 
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
   color: $den-dark;
@@ -31,12 +34,12 @@ $presentation-font-size-root: 30px;
 /* === Title Slide === */
 #title-slide {
   text-align: center !important;
-  
+
   h1.title {
     color: $den-white;
     font-size: 1.6em;
     font-weight: 700;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     position: absolute;
     bottom: -300px;
     left: 0;
@@ -47,24 +50,24 @@ $presentation-font-size-root: 30px;
     box-sizing: border-box;
     transition: font-size 0.2s ease, bottom 0.2s ease;
   }
-  
+
   /* 2-line title: smaller font, move up */
   &.title-2-lines h1.title {
     font-size: 1.3em;
     bottom: -270px;
   }
-  
+
   /* 3+ line title: 25% smaller than original, move up more */
   &.title-3-lines h1.title {
     font-size: 1.2em;
     bottom: -220px;
   }
-  
+
   /* Hide logo on title slide */
   .slide-logo {
     display: none !important;
   }
-  
+
   .author {
     color: $den-white;
     font-size: 0.9em;
@@ -74,19 +77,19 @@ $presentation-font-size-root: 30px;
     right: 0;
     text-align: center;
     margin: 0;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
-  
+
   .date {
     color: $den-white;
     font-size: 0.75em;
     position: absolute;
-    bottom: -500px;    
+    bottom: -500px;
     left: 0;
     right: 0;
     text-align: center;
     margin: 0;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -120,6 +123,41 @@ $presentation-font-size-root: 30px;
 
 .reveal .slides section:not(#title-slide) h2.heading-very-long {
   font-size: 0.75em;
+}
+
+/* === Sub-headings (h3, h4, h5, h6) for content slides === */
+.reveal .slides section:not(#title-slide) h3,
+.reveal .slides section:not(#title-slide) h4,
+.reveal .slides section:not(#title-slide) h5,
+.reveal .slides section:not(#title-slide) h6 {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  color: $den-dark;
+}
+
+.reveal .slides section:not(#title-slide) h3 {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: $den-brown;
+}
+
+.reveal .slides section:not(#title-slide) h4 {
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.reveal .slides section:not(#title-slide) h5 {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.reveal .slides section:not(#title-slide) h6 {
+  font-size: 0.7em;
+  font-weight: 500;
+  font-style: italic;
 }
 
 /* === Logo at top-right (viewport-relative for consistent sizing) === */
@@ -163,13 +201,15 @@ $presentation-font-size-root: 30px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  h2, h3, p {
+
+  h2,
+  h3,
+  p {
     color: $den-white;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     text-align: center;
   }
-  
+
   h2::before {
     display: none !important;
   }
@@ -177,7 +217,7 @@ $presentation-font-size-root: 30px;
 
 /* Hide logo on ending slide */
 .reveal .slides section.ending-slide .slide-logo,
-.ending-slide ~ .slide-logo {
+.ending-slide~.slide-logo {
   display: none !important;
 }
 
@@ -187,7 +227,8 @@ body:has(.ending-slide.present) .slide-logo {
 }
 
 /* === Lists === */
-.reveal ul, .reveal ol {
+.reveal ul,
+.reveal ol {
   margin-left: 1em;
 }
 
@@ -229,16 +270,16 @@ body:has(.ending-slide.present) .slide-logo {
 /* Use {.small} or {.smaller} on slide headers to reduce font size */
 .reveal .slides section.small {
   font-size: 0.85em;
-  
+
   h2 {
     font-size: 1.1em;
   }
-  
+
   li {
     margin-bottom: 0.3em;
     line-height: 1.3;
   }
-  
+
   pre {
     font-size: 0.9em;
   }
@@ -246,16 +287,16 @@ body:has(.ending-slide.present) .slide-logo {
 
 .reveal .slides section.smaller {
   font-size: 0.7em;
-  
+
   h2 {
     font-size: 1.0em;
   }
-  
+
   li {
     margin-bottom: 0.25em;
     line-height: 1.2;
   }
-  
+
   pre {
     font-size: 0.85em;
   }
